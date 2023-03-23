@@ -1,7 +1,18 @@
 micronaut:
   application:
-    name: micronautDemo
-netty:
-  default:
-    allocator:
-      max-order: 3
+    name: micronaut-demo
+  server:
+    port: 8080
+#netty:
+#  default:
+#    allocator:
+#      max-order: 3
+postgres:
+  reactive:
+    client:
+      port: 5432
+      host: localhost
+      database: mydb
+      user: user
+      password: topsecret
+
