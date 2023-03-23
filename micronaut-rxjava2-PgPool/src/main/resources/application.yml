@@ -1,0 +1,15 @@
+micronaut:
+  application:
+    name: micronaut-demo
+  server:
+    port: 8080
+vertx:
+  pg:
+    client:
+      port: 5432
+      host: localhost
+      database: mydb
+      user: user
+      password: topsecret
+      maxSize: 5
+

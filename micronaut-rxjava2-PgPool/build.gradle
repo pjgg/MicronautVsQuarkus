@@ -1,0 +1,51 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.7.4"
+}
+
+version = "0.1"
+group = "com.example"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //TODO: com.ongres.scram:client should be removed because should be provided by 'micronaut-vertx-pg-client'
+    // https://github.com/micronaut-projects/micronaut-core/issues/8994
+    implementation('com.ongres.scram:client:2.1')
+    implementation("io.micronaut.sql:micronaut-vertx-pg-client")
+    implementation("io.micronaut.rxjava2:micronaut-rxjava2")
+    implementation("io.micronaut:micronaut-runtime")
+    runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("io.micronaut:micronaut-inject")
+    implementation ('io.micronaut:micronaut-management')
+}
+
+
+application {
+    mainClass.set("com.example.Application")
+}
+java {
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+    runtime("netty")
+    testRuntime("junit5")
+    processing {
+        incremental(true)
+        annotations("com.example.*")
+    }
+}
+
+run {
+    systemProperties([
+            'micronaut.env.deduction': 'false'
+    ])
+}
+
+
+
