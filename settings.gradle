@@ -1,0 +1,5 @@
+rootProject.name="tech-benchmark"
+
+includeBuild("micronaut-demo")
+includeBuild("quarkus-demo")
+
