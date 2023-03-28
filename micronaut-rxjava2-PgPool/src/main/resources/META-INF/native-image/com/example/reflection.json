@@ -1,0 +1,7 @@
+[
+  {
+    "name": "io.vertx.pgclient.impl.codec.DataTypeCodec",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  }
+]
