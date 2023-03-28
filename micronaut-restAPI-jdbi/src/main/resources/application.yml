@@ -1,0 +1,13 @@
+micronaut:
+  application:
+    name: mm-demo
+  server:
+    port: 8080
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driverClassName: org.postgresql.Driver
+    username: user
+    password: 'topsecret'
+    dialect: POSTGRES
+
