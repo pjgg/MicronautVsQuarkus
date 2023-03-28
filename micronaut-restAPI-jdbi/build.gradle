@@ -17,6 +17,7 @@ dependencies {
     implementation("org.postgresql:postgresql")
     implementation("org.jdbi:jdbi3-sqlobject:3.37.1")
     implementation("jakarta.annotation:jakarta.annotation-api")
+    annotationProcessor("io.micronaut:micronaut-graal")
 }
 
 application {
