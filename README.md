@@ -61,9 +61,9 @@ docker run --name some-postgres -e POSTGRES_PASSWORD=topsecret -e POSTGRES_USER=
 
 | Metric        | Avg time to 1st req | RSS after using app (MB) | 
 | ------------- | ------------------- | ------------------------ | 
-| Verx + PgPool + Mandrel 22.3-java17 + Quarkus 2.16.5.Final  | 0.040 sec  | 40.8 MB |
+| Verx + PgPool + Mandrel 22.3 java17 + Quarkus 2.16.5.Final  | 0.040 sec  | 40.8 MB |
 | Verx + PgPool + GraalVM 22.3 + Quarkus 2.16.5.Final  | 0.041 sec  | 39.6 MB |
-| RestEasy + PgPool + Mandrel 22.3-java17 + Quarkus 2.16.5.Final  | 0.042 sec  | 41.4 MB |
+| RestEasy + PgPool + Mandrel 22.3 java17 + Quarkus 2.16.5.Final  | 0.042 sec  | 41.4 MB |
 | RestEasy + PgPool + GraalVM 22.3 + Quarkus 2.16.5.Final  | 0.042 sec  | 41.3 MB |
 | RxJava2 + PgPool + GraalVM 22.3 + Micronaut 3.8.7  | Doesn´t Work  | Doesn´t Work |
 | RestAPI + JDBI + GraalVM 22.3 + Micronaut 3.8.7  | 0.059 sec  | 60.8 MB |
@@ -74,13 +74,20 @@ docker run --name some-postgres -e POSTGRES_PASSWORD=topsecret -e POSTGRES_USER=
 
 |               | Micronaut           |           Quarkus        | 
 | ------------- | ------------------- | ------------------------ | 
-| Dev Services  | :x: | :heavy_check_mark: |
-| Dev UI | :x: | :heavy_check_mark: |
-| Dev Mode      | :heavy_check_mark: | :heavy_check_mark: |
-| Test Mode | :x: |  :heavy_check_mark: |
-| GraalVM support | :heavy_check_mark: | :heavy_check_mark: |
-| Mandrel support | :x: | :heavy_check_mark: |
-| K8s native support | :heavy_check_mark: | :heavy_check_mark: |
-| Knative support | :heavy_check_mark: | :heavy_check_mark: |
-| K8s operator support | :x: | :heavy_check_mark: |
-| OCP native support | :x: | :heavy_check_mark: |
+| Dev Services  | &#9746; | &#9745; |
+| Dev UI | &#9746; | &#9745; |
+| Dev Mode      | &#9745; | &#9745; |
+| Test Mode | &#9746; |  &#9745; |
+| GraalVM support | &#9745; | &#9745; |
+| Mandrel support | &#9746; | &#9745; |
+| K8s native support | &#9745; | &#9745; |
+| Knative support | &#9745; | &#9745; |
+| K8s operator support | &#9746; | &#9745; |
+| OCP native support | &#9746; | &#9745; |
+
+## Community adoption
+
+![overview](misc/adoption.png)
+
+Is true that Micronaut is not a monorepo perse, so some stars could be located in external repos as micronaut data or security, but even taking into account this sub-projects is not enough to fill the gap. Also, Quarkus is a monorepo but there are a lot of community extensions that are not located in this repo (are located in quarkiverse, as Quarkus Helm extension or HiveMQ extension). To me what make me my attention, is that Micronaut was released one year earlier than Quarkus, but the adoption KPIs doesn´t show this theorical advantage.    
+
