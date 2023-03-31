@@ -23,7 +23,7 @@ OS: Linux / Fedora 37
 
 Given an endpoint `http://localhost:8080/postgres` retrieve the postgres version and return it as a String.
 
-Docker will be up and running in Docker:
+Postgres will be up and running in Docker:
 
 ```
 docker run --name some-postgres -e POSTGRES_PASSWORD=topsecret -e POSTGRES_USER=user -e POSTGRES_DB=mydb -p 5432:5432 -d postgres:14
@@ -53,6 +53,10 @@ docker run --name some-postgres -e POSTGRES_PASSWORD=topsecret -e POSTGRES_USER=
 
 > **_TPS_** was calculated based on locus metrics. The scenario run 10K concurrent request, dispatched every 1 - 2 sec
 
+
+![overview](misc/MicronautVsQuarkus.png)
+
+
 ### Native
 
 | Metric        | Avg time to 1st req | RSS after using app (MB) | 
@@ -63,6 +67,8 @@ docker run --name some-postgres -e POSTGRES_PASSWORD=topsecret -e POSTGRES_USER=
 | RestEasy + PgPool + GraalVM 22.3 + Quarkus 2.16.5.Final  | 0.042 sec  | 41.3 MB |
 | RxJava2 + PgPool + GraalVM 22.3 + Micronaut 3.8.7  | Doesn´t Work  | Doesn´t Work |
 | RestAPI + JDBI + GraalVM 22.3 + Micronaut 3.8.7  | 0.059 sec  | 60.8 MB |
+
+![overview](misc/Native_MicronautVsQuarkus.png)
 
 ## Developer Experience
 
